@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{%  extends 'index.html' %}
+{% load staticfiles %}
+<html lang="en">
+
+
+
+{%  block body %}
+ <section class="breadcrumb breadcrumb_bg align-items-center ">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-sm-6">
+                    <div class="breadcrumb_tittle">
+                        <h2>BCA</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+<div class="container mt-10 border border-success" style="margin-bottom: 50px">
+
+       <div class="row">
+  <div class="col-lg-2 col-md-12" style="margin-bottom: 50px; margin-top: 50px">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+	{% for i in Semester %}
+      <a   class="nav-link btn btn-outline-success"  type="button" id="v-pills-messages-tab"  href="/sub/{{ Studyone.sname }}/{{ i }}">Semester {{ i}}  </a>
+      	{% endfor %}
+
+
+	</div>
+  </div>
+  <div class="col-lg-10 col-md-12">
+
+    <div class="tab-content" id="v-pills-tabContent">
+      <!--SEMESTER 1-->
+      <div class="tab-pane fade show active" id="sem1" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+        <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    {% for f in Subject %}
+
+        <a class="nav-item nav-link"   href="/un/{{ Studyone }}/{{ Semesteroneobject.semname}}/{{ f.subname }}" role="tab" aria-controls="nav-contact" aria-selected="true">{{ f.subname}}</a>
+    {% endfor %}
+
+  </div>
+</nav>
+<div class="tab-content" >
+  <!--NAVIGATE MATHS-1 START-->
+  <div   role="tabpanel" aria-labelledby="nav-profile-tab">
+
+    <table class="table table-bordered table-striped">
+  <thead>
+
+    <tr>
+      <th scope="col">Cover</th>
+      <th scope="col">Title</th>
+      <th scope="col">Request for Link</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for f in File %}
+    <tr>
+      <th><img src="{{f.img1.url}}" alt="..." class="img-thumbnail" height="50px" width="40px"></th>
+      <th> {{f.fname}}</th>
+
+        {% if user.is_authenticated %}
+        <th><a href="/filename/{{ f.files }}">Download</a></th>
+        {% else %}
+        <th>(Download)  Please Login for download</th>
+        {% endif %}
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+         </div>
+  </div>
+
+
+
+
+
+{%  endblock %}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{%  extends 'login.html' %}
+{% load staticfiles %}
+<html lang="en">
+
+	{% block body %}
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url({% static 'img/bg-01.jpg' %});">
+
+
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54 bg-dark">
+				<form class="login100-form validate-form" method="POST" action="#">
+
+
+					<span class="login100-form-title p-b-49 text-light">
+						Sign Up
+					</span>
+					{% csrf_token %}
+
+                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<label for="id_username"><span class="label-input100 text-primary">Username</span> </label>
+
+						<input  id="id_username"  class="input100 text-light" type="text" name="uname" placeholder="Type your username">
+
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<label for="id_first_name"><span class="label-input100 text-primary">First Name</span></label>
+						<input id="id_first_name" class="input100 text-light" type="text" name="first_name" placeholder="Type your First Name">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<label for="id_last_name"><span class="label-input100 text-primary">Last Name</span></label>
+						<input  id="id_last_name" class="input100 text-light" type="text" name="last_name" placeholder="Type your Last Name">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<label for="id_email"><span class="label-input100 text-primary">Email Address</span></label>
+						<input  id="id_email" class="input100 text-light" type="email" name="email" placeholder="Type your Email Address">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<label for="id_mobile_no"><span class="label-input100 text-primary">Mobile number</span></label>
+						<input id="id_mobile_no" class="input100 text-light" type="number" name="mobno" placeholder="Type your mobile number">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<label for="id_age"><span class="label-input100 text-primary">Age</span></label>
+						<input id="id_age" class="input100 text-light" type="number" name="age" placeholder="Type your age">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
+						<label for="id_password1"><span class="label-input100 text-primary">Password</span></label>
+						<input  id="id_password1"  class="input100 text-light" type="password" name="pass" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+						<label for="id_first_name"><span class="label-input100 text-primary">Confirm Password</span></label>
+						<input id="id_password2" class="input100 text-light" type="password" name="cpa" placeholder="Type your password again">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					
+					
+					
+					
+					<div class="container-login100-form-btn pt-2">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="submit" >
+								Submit
+							</button>
+						</div>
+					</div>
+
+					<div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+							Or Login Using
+						</span>
+					</div>
+					<div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+						{% if messages %}
+                            {% for i in messages %}
+                                {{i}}
+                            {% endfor %}
+                        {% endif %}
+						</span>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	{% endblock %}
+

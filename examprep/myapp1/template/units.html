@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<script src="{% static 'script2.js' %}"></script>
+<link rel="stylesheet" href="{% static 'admin/style2.css' %}">
+{%  block body %}
+<body>
+<h1 align="center"> {{ Study.sname }} </h1>
+<h2 align="center"> {{ Semester.semname }} </h2>
+
+ <div class="navb" id="myDIV">
+{% for i in Subject %}
+  <a href="/un/{{ Study.sname }}/{{ Semester.semname}}/{{i}}"> {{i}}  </a><br>
+{% endfor %}
+</div>
+
+<div class="containerr">
+    {% for f in Unit %}
+        <a href="/files/{{ Study}}/{{ Semester}}/{{Subjectone}}/{{ f.uname}}">{{ f.uname}}  </a><br>
+    {% endfor %}
+</div>
+</body>
+{%  endblock %}
+</html>

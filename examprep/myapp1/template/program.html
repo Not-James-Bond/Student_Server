@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load staticfiles %}
+<html lang="en">
+
+{% block body %}
+    <!-- Program header start-->
+    <section class="breadcrumb breadcrumb_bg align-items-center">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+
+                <div class="col-sm-6">
+                    <div class="breadcrumb_tittle">
+                    
+                        <h2>Program</h2>
+                        <h2> {{ Languageone }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- program header end-->
+
+    <!-- our_program part start-->
+
+    <section class="our_service section_padding">
+      <div class="container">
+	  <div class="col-lg-14">
+              <div class="prog_right_sidebar">
+                <aside class="single_sidebar_widget search_widget">
+                  <form action="#">
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search Keyword"
+                          onfocus="this.placeholder = ''"
+                          onblur="this.placeholder = 'Search Keyword'"
+                        />
+                        <div class="input-group-append">
+                            <button class="btn" type="button">
+                              <i class="ti-search"></i>
+                            </button>
+                          </div>
+                      </div>
+                    </div>
+                  </form>
+                </aside>
+              </div>
+            </div>
+        <div class="row">
+            {% for i in Programname %}
+
+          <div class="col-sm-6 col-xl-4 col mt-5">
+              <a href="/{{i.program_files}}">
+            <div class="single_feature">
+              <div class="single_service">
+
+              <h4>
+                  {{i.p_name}} </h4>
+
+                <ul>
+                </ul>
+              </div>
+            </div>
+              </a>
+          </div>
+
+            {% endfor %}
+        </div>
+      </div>
+    </section>
+     <section class="our_projectpg section_pad" id="pageno">
+			 <nav aria-label="Page_No">
+              {% if Programname.has_other_pages %}
+                <ul class ="pagination justify-content-center">
+                    {% if Programname.has_previous %}
+                        <li class="page-item"><a  class="page-link" href="?page={{Programname.previous_page_number}}">&laquo</a></li>
+
+
+                    {% endif %}
+                    {% for i in Programname.paginator.page_range %}
+                        {% if Programname.number == i %}
+                            <li class="page-item active"  ><a class="page-link"> {{i}} <span class="sr-only">(current)</span></a></li>
+                        {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if Programname.has_next %}
+                        <li class="page-item"><a  class="page-link" href="?page={{Programname.next_page_number}}">&laquo;</a></li>
+
+
+
+                    {% endif %}
+
+                </ul>
+
+              {% endif %}
+			 </nav>
+		</section>
+    <!-- our_Program part end-->
+   <!-- about part start-->
+<!--    <section class="creative padding_bottom">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-start">
+          <div class="col-md-6 col-xl-6">
+            <div class="creative_img">
+              <img src="img/creative_img.png" alt="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="creative_part_text">
+              <h2>We work hard and think creatively</h2>
+              <p>
+                There winged grass midst moving earth seed herb fifth you
+                multiply you divide cattle stars first cattle.
+              </p>
+              <span
+                >“There winged grass midst moving earth seed herb fifth you
+                multiply you divide cattle stars first cattle.</span
+              >
+              <a
+                href="https://www.youtube.com/watch?v=tDiJnd7SM2Y"
+                class="popup-youtube"
+                ><i class="ti-control-play"></i> See how we work</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- about part end--> 
+
+    <!--::review_part end::-->
+ <!--   <div class="review_part padding_bottom" id="testimonial">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-7">
+            <div class="section_tittle text-center">
+              <p>Testimonials</p>
+              <h2>What our Client say</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="review_part_text owl-carousel">
+              <div class="singler_eview_part">
+                <div class="client_info">
+                  <img src="img/client_1.png" alt="" />
+                  <h4>Justine Miller</h4>
+                  <p>Web developer at Envato</p>
+                </div>
+                <p>
+                  “There winged grass midst moving earth seed herb fifth you
+                  multiply you divide cattle stars first cattle was had spirit
+                  you're thing, night darkness. Which itself stars creature.
+                </p>
+              </div>
+              <div class="singler_eview_part">
+                <div class="client_info">
+                  <img src="img/client_2.png" alt="" />
+                  <h4>Danny Jonson</h4>
+                  <p>Creative director at Apple</p>
+                </div>
+                <p>
+                  “There winged grass midst moving earth seed herb fifth you
+                  multiply you divide cattle stars first cattle was had spirit
+                  you're thing, night darkness. Which itself stars creature.
+                </p>
+              </div>
+              <div class="singler_eview_part">
+                <div class="client_info">
+                  <img src="img/client_1.png" alt="" />
+                  <h4>Justine Miller</h4>
+                  <p>Web developer at Envato</p>
+                </div>
+                <p>
+                  “There winged grass midst moving earth seed herb fifth you
+                  multiply you divide cattle stars first cattle was had spirit
+                  you're thing, night darkness. Which itself stars creature.
+                </p>
+              </div>
+              <div class="singler_eview_part">
+                <div class="client_info">
+                  <img src="img/client_2.png" alt="" />
+                  <h4>Danny Jonson</h4>
+                  <p>Creative director at Apple</p>
+                </div>
+                <p>
+                  “There winged grass midst moving earth seed herb fifth you
+                  multiply you divide cattle stars first cattle was had spirit
+                  you're thing, night darkness. Which itself stars creature.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!--::review_part end::-->
+
+    <!--::cta_part start::-->
+ <!--   <div class="cta_part">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <div class="cta_iner">
+              <h1>Let’s create something awesome together</h1>
+              <a href="#" class="btn_1">Discuss project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!--::cta_part end::-->
+
+{% endblock %}

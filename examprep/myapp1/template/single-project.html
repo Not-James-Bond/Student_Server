@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load staticfiles %}
+<html lang="en">
+
+
+{% block body %}
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg align-items-center">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-sm-6">
+            <div class="breadcrumb_tittle">
+              <p>{{ Projectone.project_language}}  Project details</p>
+              <h2>{{ Projectone.project_name}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!--================Blog Area =================-->
+    <section class="proj_area single-post-area padding_top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 posts-list">
+            <div class="single-post">
+              <div class="feature-img">
+                <img
+                  class="img-fluid"
+                  src="{{Projectone.project_image.url}}"
+                  alt="" height="300" width="600"
+                />
+              </div>
+              <div class="blog_details">
+                <p class="excert">
+                {{ Projectone.project_bio}}
+                </p>
+              <!--  <h2>
+                  Second divided from form fish beast made every of seas all
+                  gathered us saying he our
+                </h2>
+                <p class="excert">
+                  MCSE boot camps have its supporters and its detractors. Some
+                  people do not understand why you should have to spend money on
+                  boot camp when you can get the MCSE study materials yourself
+                  at a fraction of the camp price. However, who has the
+                  willpower
+                </p>
+                <p>
+                  MCSE boot camps have its supporters and its detractors. Some
+                  people do not understand why you should have to spend money on
+                  boot camp when you can get the MCSE study materials yourself
+                  at a fraction of the camp price. However, who has the
+                  willpower to actually sit through a self-imposed MCSE
+                  training. who has the willpower to actually
+                </p>
+                <div class="quote-wrapper">
+                  <div class="quotes">
+                    MCSE boot camps have its supporters and its detractors. Some
+                    people do not understand why you should have to spend money
+                    on boot camp when you can get the MCSE study materials
+                    yourself at a fraction of the camp price. However, who has
+                    the willpower to actually sit through a self-imposed MCSE
+                    training.
+                  </div>
+                </div>
+                <p>
+                  MCSE boot camps have its supporters and its detractors. Some
+                  people do not understand why you should have to spend money on
+                  boot camp when you can get the MCSE study materials yourself
+                  at a fraction of the camp price. However, who has the
+                  willpower
+                </p>
+                <p>
+                  MCSE boot camps have its supporters and its detractors. Some
+                  people do not understand why you should have to spend money on
+                  boot camp when you can get the MCSE study materials yourself
+                  at a fraction of the camp price. However, who has the
+                  willpower to actually sit through a self-imposed MCSE
+                  training. who has the willpower to actually
+                </p>
+                -->
+              </div>
+            </div>
+            <!--Prev Proj and Next Proj-->
+            <a href="/{{Projectone.project_File}}"><b>Download this project</b></a>
+
+            <div class="row gallery-item">
+              <div class="col-md-6">
+                <a href="{{Projectone.project_output_1.url}}" class="img-pop-up">
+                  <div class="single-gallery-image" style="background: url({{Projectone.project_output_1.url}});"></div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="{{Projectone.project_output_2.url}}" class="img-pop-up">
+                  <div class="single-gallery-image" style="background: url({{Projectone.project_output_2.url}});"></div>
+                </a>
+              </div>
+            </div>
+            <!--
+          </div>
+              <div class="blog-author">
+              <div class="media align-items-center">
+                <img src="img/blog/author.png" alt="" />
+                <div class="media-body">
+                  <a href="#">
+                    <h4>Harvard milan</h4>
+                  </a>
+                  <p>
+                    Second divided from form fish beast made. Every of seas all
+                    gathered use saying you're, he our dominion twon Second
+                    divided from
+                  </p>
+                </div>
+              </div>
+            </div>
+          -->
+
+            <div class="comments-area">
+              <h4>Comments</h4>
+
+              {% for  i in Comments %}
+              <div class="comment-list">
+                <div class="single-comment justify-content-between d-flex">
+                  <div class="user justify-content-between d-flex">
+                      {% for j in Profile_img %}
+                        {% if i.comment_user == j.user.username %}
+                        <div class="thumb">
+                          <img src="{{ j.user_image.url}}" alt="" />
+                        </div>
+                        {% endif %}
+                      {% endfor %}
+                    <div class="desc">
+                      <p class="comment">
+                       {{ i.comment_body }}
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                          <h5>
+                            <a href="/view_dashboard_from_outside/{{i.comment_user}}">{{i.comment_user}}</a>
+                          </h5>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            {% if user.is_authenticated %}
+            <div class="comment-form">
+              <h4>Leave a Reply</h4>
+              <form
+                class="form-contact comment_form"
+                action="#"
+                id="commentForm"
+                method ="post"
+              >
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <textarea
+                        class="form-control w-100"
+                        name="comment"
+                        id="comment"
+                        cols="30"
+                        rows="9"
+                        placeholder="Write Comment"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input
+                        class="form-control"
+                        name="name"
+                        value="{{user}}"
+                        id="name"
+                        type="hidden"
+
+                      />
+                    </div>
+                  </div>
+
+
+                </div>
+                <div >
+                  <button type="submit" class="button btn_1 button-contactForm">
+                    Post
+                  </button>
+                </div>
+              </form>
+            </div>
+              {% else %}
+              <h4> please login to comment</h4>
+              {% endif %}
+          </div>
+          </div>
+        <!--
+          <div class="col-lg-4">
+            <div class="blog_right_sidebar">
+              <aside class="single_sidebar_widget search_widget">
+                <form action="#">
+                  <div class="form-group">
+                    <div class="input-group mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search Keyword"
+                        onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = 'Search Keyword'"
+                      />
+                      <div class="input-group-append">
+                        <button class="btn" type="button">
+                          <i class="ti-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="button rounded-0 primary-bg text-white w-100 btn_1"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </form>
+              </aside>
+            </div>
+          </div>
+
+        -->
+        </div>
+      </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+   {% endblock %}

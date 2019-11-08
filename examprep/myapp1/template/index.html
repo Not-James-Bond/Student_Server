@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+
+    />
+    <title>Link the info</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %}" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" />
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/about.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+  </head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+          <div class="row align-items-left">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="index.html">
+                  <img src="{% static 'img/logo.png' %}" alt="logo" />
+                </a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+
+                  <span class="ti-menu"></span>
+                </button>
+
+                <div
+                  class="collapse navbar-collapse main-menu-item justify-content-center"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                     <!-- Courses -->
+                    <li class="nav-item dropdown">
+                     <a
+                       class="nav-link dropdown-toggle"
+                       href="#" id="navbarDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                     >
+                      Courses
+                    </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <ul>
+                      {% for i in Study %}
+                      <a class="dropdown-item"  href="/sem/{{i.sname}}/">{{ i.sname }}</a>
+                      {% endfor %}
+                     </ul>
+                    </div>
+                    </li>
+                      <!-- Programs -->
+                    <li class="nav-item dropdown">
+                     <a
+                       class="nav-link dropdown-toggle"
+                       href="#" id="navbarDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                     >
+                      Programs
+					  </a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" >
+                       {% for j in Language %}
+                        <a class="dropdown-item"  href="/lan/{{j.l_name}}/">{{ j.l_name }}</a>
+                        {% endfor %}
+                      </ul>
+                    </li>
+                    
+
+                    <!-- Projects -->
+                    <li class="nav-item dropdown">
+                     <a
+                       class="nav-link dropdown-toggle"
+                       href="#" id="navbarDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                     >
+                      Projects
+					</a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu3" >
+                        {% for j in Project_Language %}
+                      <a class="dropdown-item"  href="/prolan/{{j.pl_name}}/">{{ j.pl_name }}</a>
+                      {% endfor %}
+                      </ul>
+                    </li>
+                    <!--
+                    <li class="nav-item"><a class="nav-link" href="services.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+                    -->
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+
+
+                  </ul>
+                </div>
+                {% if user.is_authenticated %}
+                <div class=log-in>
+                    <a class="log" href="/profileview/{{user}}">My profile </a>
+                </div>
+                {% else %}
+                <div class=log-in>
+                    <a class="log" href="/login">
+                  <img width="25" height="25" src="{% static 'img/svg/id-card.svg' %}" alt="" ></a>
+                </div>
+                {% endif %}
+            </div>
+          </div>
+
+              
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Header part end-->
+	{% block body %}
+  <!-- banner part start-->
+  <section class="banner_part">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 offset-lg-1">
+          <div class="banner_text">
+            <div class="banner_text_iner">
+              <h5>We are LinkTheInfo</h5>
+              <h1>Continously linking all the info for you</h1>
+              <a href="/about" class="btn_1">About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- about part start-->
+  <section class="about_part section_padding">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md-6">
+          <div class="about_part_text shadow p-5 mb-1 bg-white rounded">
+            <h5>Ask Us</h5>
+            <h2>Ask us Anything.</h2>
+            <p>
+              We provide free solution of programs
+              and your frequently asked questions.
+              That too within 48 hours or less.
+            </p>
+            <a href="/ask_us" class="btn_1">Ask us</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="about_part_img">
+            <img src="{% static 'img/question_mark.jpg' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about part end-->
+
+  <!-- our_service start-->
+  <section class="our_service">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-xl-4 col-md-5">
+          <div class="single_feature">
+            <div class="single_service">
+              <span>01</span>
+              <h4>
+                E-Books <br />
+              </h4>
+              <p>
+                You can find all the Ebooks here for your course.
+              </p>
+              <ul>
+            <!--    <li><a href="#">BCA</a></li>
+                <li><a href="#">B.Tech</a></li>
+                <li><a href="#">BBA</a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-4 col-md-5">
+          <div class="single_feature">
+            <div class="single_service">
+              <span>02</span>
+              <h4>Notes</h4>
+              <p>
+                You can find all the relevent notes here for your course.
+              </p>
+              <ul>
+            <!--    <li><a href="#">WordPress</a></li>
+                <li><a href="#">iOS & Android</a></li>
+                <li><a href="#">WFront end</a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-4 col-md-5">
+          <div class="single_feature">
+            <div class="single_service">
+              <span>03</span>
+              <h4>Projects</h4>
+              <p>
+                You can find the projects for your course labs.
+              </p>
+              <ul>
+            <!--    <li><a href="#">Lead generation</a></li>
+                <li><a href="#">Social media</a></li>
+                <li><a href="#">Email marketing</a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- our_service part end-->
+
+
+
+  <!-- about part start-->
+  <section class="creative padding_top padding_bottom">
+    <div class="container-fluid">
+      <div class="row align-items-center justify-content-start">
+        <div class="col-md-6 col-xl-6">
+          <div class="creative_img">
+            <img src="{% static 'img/creative_img.png' %}" alt="" />
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="creative_part_text">
+            <h2>We work hard and want to give you every Info related for your courses</h2>
+        <!--    <p>
+              There winged grass midst moving earth seed herb fifth you
+              multiply you divide cattle stars first cattle.
+            </p> -->
+            <span>We want to help you in your college years so that you can focus on your future to create something new for the entire world.</span>
+        <!--    <a href="https://www.youtube.com/watch?v=tDiJnd7SM2Y" class="popup-youtube"><i class="ti-control-play"></i> See how we work</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about part end-->
+
+  <!--::review_part end::
+  <div class="review_part padding_bottom" id="testimonial">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-7">
+          <div class="section_tittle text-center">
+            <p>Testimonials</p>
+            <h2>What our Client say</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="review_part_text owl-carousel">
+            <div class="singler_eview_part">
+              <div class="client_info">
+                <img src="img/client_1.png" alt="" />
+                <h4>Justine Miller</h4>
+                <p>Web developer at Envato</p>
+              </div>
+              <p>
+                “There winged grass midst moving earth seed herb fifth you
+                multiply you divide cattle stars first cattle was had spirit
+                you're thing, night darkness. Which itself stars creature.
+              </p>
+            </div>
+            <div class="singler_eview_part">
+              <div class="client_info">
+                <img src="img/client_2.png" alt="" />
+                <h4>Danny Jonson</h4>
+                <p>Creative director at Apple</p>
+              </div>
+              <p>
+                “There winged grass midst moving earth seed herb fifth you
+                multiply you divide cattle stars first cattle was had spirit
+                you're thing, night darkness. Which itself stars creature.
+              </p>
+            </div>
+            <div class="singler_eview_part">
+              <div class="client_info">
+                <img src="img/client_1.png" alt="" />
+                <h4>Justine Miller</h4>
+                <p>Web developer at Envato</p>
+              </div>
+              <p>
+                “There winged grass midst moving earth seed herb fifth you
+                multiply you divide cattle stars first cattle was had spirit
+                you're thing, night darkness. Which itself stars creature.
+              </p>
+            </div>
+            <div class="singler_eview_part">
+              <div class="client_info">
+                <img src="img/client_2.png" alt="" />
+                <h4>Danny Jonson</h4>
+                <p>Creative director at Apple</p>
+              </div>
+              <p>
+                “There winged grass midst moving earth seed herb fifth you
+                multiply you divide cattle stars first cattle was had spirit
+                you're thing, night darkness. Which itself stars creature.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="img/animate_icon/icon_3.png" class="animation_icon_3" alt="">
+  </div>
+  <--::review_part end::-->
+
+  <!--::cta_part start::-->
+  <div class="cta_part">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="cta_iner">
+            <h1>We have some awesome Projects for your college labs.</h1>
+            <a href="/prolan/C/" class="btn_1">View projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--::cta_part end::-->
+{% endblock %}
+  <!-- footer part start-->
+
+  <footer class="footer-area">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-sm-6 col-md-3 col-xl-3">
+          <div class="single-footer-widget footer_1">
+
+
+
+            <a href="index.html">
+              <img src="{% static 'img/footer_logo.png' %}" alt="" />
+            </a>
+            <ul>
+                 <li><a href="#">Work</a></li>
+                <!-- <li><a href="#">Services</a></li> -->
+              <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="social_icon">
+              <a href="#"><i class="ti-facebook"></i></a>
+              <a href="#"><i class="ti-twitter-alt"></i></a>
+              <a href="#"><i class="ti-dribbble"></i></a>
+              <a href="#"><i class="ti-instagram"> </i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-md-3">
+          <div class="single-footer-widget footer_2">
+            <h4>Company</h4>
+            <ul>
+              <li>
+                <a href="#">Media</a>
+              </li>
+            <!--  <li>
+                <a href="#">Carrier</a>
+              </li> -->
+         <!--     <li>
+                <a href="#">Testimonials</a>
+              </li> -->
+              <li>
+                <a href="#">FAQ</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-md-3">
+          <div class="single-footer-widget footer_2">
+            <h4>Resource</h4>
+            <ul>
+              <li>
+                <a href="#">E-Books</a>
+              </li>
+              <li>
+                <a href="#">Previous Year Question Papers</a>
+              </li>
+              <li>
+                <a href="#">Projects</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-md-3">
+          <div class="single-footer-widget footer_2">
+            <div class="single_contact_info">
+              <h3>Made in India</h3>
+
+            </div>
+      <!--      <div class="single_contact_info">
+              <h3>New York - USA</h3>
+              <p>127, Manchaster city, London</p>
+              <p>+008 728 362 278</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img src="{% static 'img/animate_icon/icon_2.png' %}" class="animation_icon_2" alt="">
+
+  </footer>
+  <!-- footer part end-->
+
+  <!-- jquery plugins here-->
+
+  script src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
+    <!-- popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- easing js -->
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <!-- isotope js -->
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <!-- particles js -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <!-- custom js -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+
+</html>

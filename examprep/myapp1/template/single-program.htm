@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load staticfiles %}
+<html lang="en">
+
+{% block body %}
+<!-- breadcrumb start-->
+    <link rel="stylesheet" href="{% static 'single_program/style.css' %} " >
+
+    <section class="breadcrumb breadcrumb_bg align-items-center">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-sm-6">
+            <div class="breadcrumb_tittle">
+              <h2>Program details</h2>
+              <p>C Program details</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <section class="prog_area single-area padding_top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 posts-list">
+            <div class="single-post">
+              <div class="prog_details">
+                <h2>
+                    DS Program
+                </h2>
+                <pre>
+                    #include<iostream>
+                    using namespace std;
+
+                        class node{
+                            public:
+                                int info;
+                                node *next;
+                                node(int i,node *n=NULL){
+                                    info=i;
+                                    next=n;
+                                }
+                        };
+
+                        class OrderedList{
+                            node *head,*tail;
+                            public:
+                                OrderedList(){
+                                    head=tail=NULL;
+                                }
+
+                                bool isEmpty(){
+                                    return head==NULL;
+                                }
+
+                                node* getHead(){
+                                    return head;
+                                }
+                                void insertAtHead(int);
+                                void insertAtTail(int);
+                                void insert(int);
+                                void display();
+                                void deleteHead();
+                                void deleteTail();
+                                void deleteNode();
+                                void merge(OrderedList&);
+                        };
+
+                        void OrderedList::insert(int x){
+                            if(isEmpty()){
+                                head=tail=new node(x);
+                            }else{
+                                if(x<head->info)
+                                insertAtHead(x);
+                                else if(x>tail->info)
+                                insertAtTail(x);
+                                else{
+                                    node *temp=head->next,*prev=head;
+
+                                    for(;temp->info < x;temp=temp->next,prev=prev->next);
+
+                                    prev->next=new node(x,temp);
+                                }
+                            }
+                        }
+
+                        void OrderedList::insertAtHead(int x){
+                            if(isEmpty()){
+                                head=tail=new node(x);
+                            }else{
+                                head=new node(x,head);
+                            }
+                        }
+
+                        void OrderedList::insertAtTail(int x){
+                            if(isEmpty()){
+                                head=tail=new node(x);
+                            }else{
+                                tail->next=new node(x);
+                                tail=tail->next;
+                            }
+                        }
+
+                        void OrderedList::deleteHead(){
+                            if(isEmpty()){
+                                cout<<"\nList is Empty";
+                                return;
+                            }else{
+                                node *temp=head;
+                                head=head->next;
+                                delete temp;
+                            }
+                        }
+
+                        void OrderedList::deleteTail(){
+                            if(isEmpty()){
+                                cout<<"\nList is empty";
+                                return;
+                            }else{
+                                node *temp=head;
+                                for(;temp->next!=tail;temp=temp->next);
+                                temp->next=NULL;
+                                int d=tail->info;
+                                delete tail;
+                                tail=temp;
+                                cout<<"\nDeleted value: "<<d;
+                            }
+                        }
+
+                        void OrderedList::deleteNode(){
+                            if(isEmpty()){
+                                cout<<"\nList is empty";
+                                return;
+                            }else{
+                                int x;
+                                cout<<"\nEnter the element to be deleted: ";
+                                cin>>x;
+                                if(head->info==x)
+                                deleteHead();
+                                else if(tail->info==x)
+                                deleteTail();
+                                else{
+                                    node *temp=head->next,*prev=head;
+                                    for(;temp->info!=x && temp->next!=NULL ;temp=temp->next,prev=prev->next);
+                                    if(temp->info==x)
+                                    prev->next=temp->next;
+                                    else
+                                    cout<<"\nNot found";
+                                }
+                            }
+                        }
+
+                        void OrderedList::display(){
+                            if(isEmpty()){
+                                cout<<"\nList is empty";
+                                return;
+                            }else{
+                                node *temp=head;
+                                while(temp!=NULL){
+                                    cout<<temp->info<<" ";
+                                    temp=temp->next;
+                                }
+                            }
+                        }
+
+                        void OrderedList::merge(OrderedList &ol){
+                            node *temp=head;
+                            node *temp1=ol.getHead();
+                            while(!ol.isEmpty()){
+                                insert(temp1->info);
+                                ol.deleteHead();
+                                temp1=ol.getHead();
+                            }
+                        }
+
+                        OrderedList enterValuesInList(int k){
+                            OrderedList sol;
+                            char choice;
+                            int x;
+                            do{
+                                cout<<"\na) Insertion";
+                                cout<<"\nb) Deletion";
+                                cout<<"\nc) Merging";
+                                cout<<"\nd) Display";
+                                cout<<"\ne) Exit";
+                                cout<<"\nEnter your choice: ";
+                                cin>>choice;
+
+                                if(choice=='a'){
+                                    cout<<"\nEnter element to be inserted: ";
+                                    cin>>x;
+                                    sol.insert(x);
+                                }else if(choice=='b'){
+                                    sol.deleteNode();
+                                }else if(choice=='c'){
+                                    cout<<"\nMerging "<<k;
+                                    OrderedList sol1=enterValuesInList(k+1);
+                                    sol.merge(sol1);
+                                    cout<<"\nEnd of merge "<<k<<endl;
+                                }else if(choice=='d'){
+                                    sol.display();
+                                }else if(choice=='e')
+                                break;
+                            }while(true);
+
+                            return sol;
+                        }
+
+                        int main(){
+                            int x;
+                            char choice;
+                            OrderedList sol=enterValuesInList(0);
+                            return 0;
+                        }
+                </pre>
+              </div>
+            </div>
+<!--O/P-->
+            <div class="row gallery-item">
+              <div class="col-md-6">
+                <a href="img/elements/g1.jpg" class="img-pop-up">
+                  <div class="single-gallery-image" style="background: url(img/blog/single_blog_1.png);"></div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="img/elements/g2.jpg" class="img-pop-up">
+                  <div class="single-gallery-image" style="background: url(img/blog/single_blog_1.png);"></div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="img/elements/g3.jpg" class="img-pop-up">
+                  <div class="single-gallery-image" style="background: url(img/blog/single_blog_1.png);"></div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="img/elements/g4.jpg" class="img-pop-up">
+                  <div class="single-gallery-image" style="background: url(img/blog/single_blog_1.png);"></div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="img/elements/g5.jpg" class="img-pop-up">
+                  <div class="single-gallery-image" style="background: url(img/blog/single_blog_1.png);"></div>
+                </a>
+              </div>
+            </div>
+            <!--
+          </div>
+              <div class="blog-author">
+              <div class="media align-items-center">
+                <img src="img/blog/author.png" alt="" />
+                <div class="media-body">
+                  <a href="#">
+                    <h4>Harvard milan</h4>
+                  </a>
+                  <p>
+                    Second divided from form fish beast made. Every of seas all
+                    gathered use saying you're, he our dominion twon Second
+                    divided from
+                  </p>
+                </div>
+              </div>
+            </div>
+          -->
+          <div class="comnts">
+            <h4>05 Comments</h4>
+            <div class="comment-list">
+              <div class="single-comment justify-content-between d-flex">
+                <div class="user justify-content-between d-flex">
+                  <div class="thumb">
+                    <img src="img/comment/comment_1.png" alt="" />
+                  </div>
+                  <div class="desc">
+                    <p class="comment">
+                      Multiply sea night grass fourth day sea lesser rule open
+                      subdue female fill which them Blessed, give fill lesser
+                      bearing multiply sea night grass fourth day sea lesser
+                    </p>
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex align-items-center">
+                        <h5>
+                          <a href="#">Emilly Blunt</a>
+                        </h5>
+                        <p class="date">December 4, 2017 at 3:12 pm</p>
+                      </div>
+                      <div class="reply-btn">
+                        <a href="#" class="btn-reply text-uppercase">reply</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="comment-list">
+              <div class="single-comment justify-content-between d-flex">
+                <div class="user justify-content-between d-flex">
+                  <div class="thumb">
+                    <img src="img/comment/comment_2.png" alt="" />
+                  </div>
+                  <div class="desc">
+                    <p class="comment">
+                      Multiply sea night grass fourth day sea lesser rule open
+                      subdue female fill which them Blessed, give fill lesser
+                      bearing multiply sea night grass fourth day sea lesser
+                    </p>
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex align-items-center">
+                        <h5>
+                          <a href="#">Emilly Blunt</a>
+                        </h5>
+                        <p class="date">December 4, 2017 at 3:12 pm</p>
+                      </div>
+                      <div class="reply-btn">
+                        <a href="#" class="btn-reply text-uppercase">reply</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="comment-list">
+              <div class="single-comment justify-content-between d-flex">
+                <div class="user justify-content-between d-flex">
+                  <div class="thumb">
+                    <img src="img/comment/comment_3.png" alt="" />
+                  </div>
+                  <div class="desc">
+                    <p class="comment">
+                      Multiply sea night grass fourth day sea lesser rule open
+                      subdue female fill which them Blessed, give fill lesser
+                      bearing multiply sea night grass fourth day sea lesser
+                    </p>
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex align-items-center">
+                        <h5>
+                          <a href="#">Emilly Blunt</a>
+                        </h5>
+                        <p class="date">December 4, 2017 at 3:12 pm</p>
+                      </div>
+                      <div class="reply-btn">
+                        <a href="#" class="btn-reply text-uppercase">reply</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="comment-form">
+              <h4>Leave a Reply</h4>
+              <form
+                class="form-contact comment_form"
+                action="#"
+                id="commentForm"
+              >
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <textarea
+                        class="form-control w-100"
+                        name="comment"
+                        id="comment"
+                        cols="30"
+                        rows="9"
+                        placeholder="Write Comment"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input
+                        class="form-control"
+                        name="name"
+                        id="name"
+                        type="text"
+                        placeholder="Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input
+                        class="form-control"
+                        name="email"
+                        id="email"
+                        type="email"
+                        placeholder="Email"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <input
+                        class="form-control"
+                        name="website"
+                        id="website"
+                        type="text"
+                        placeholder="Website"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="button btn_1 button-contactForm">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+{% endblock %}

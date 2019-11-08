@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load staticfiles %}
+<html lang="en">
+
+{% block body %}
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg align-items-center">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-sm-6">
+            <div class="breadcrumb_tittle">
+              <h2>{{Project_lanone}}</h2>
+              <h2>project</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!-- our_project part start-->
+    <section class="our_project section_padding single_page_project" id="portfolio">
+      <div class="container">
+        <div class="filters-content">
+          <div class="row justify-content-between portfolio-grid">
+            {% for i in proj %}
+              <div class="col-lg-6 col-sm-6 col-mt-5 all buildings">
+              <div class="single_our_project">
+                <div class="single_offer">
+                    <a href="/project_details/{{i.project_name}}">
+                  <img src="{{i.project_image.url}}" alt="offer_img_1"  height="300" width="300"  />
+                  <div class="hover_text">
+
+                    <h2>{{i.project_name}}</h2>
+                  </div>
+                    </a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+         <section class="our_projectpg section_pad" id="pageno">
+			 <nav aria-label="Page_No">
+              {% if proj.has_other_pages %}
+                <ul class ="pagination justify-content-center">
+                    {% if proj.has_previous %}
+                        <li class="page-item"><a  class="page-link" href="?page={{proj.previous_page_number}}">&laquo</a></li>
+                    
+                     
+                    {% endif %}
+                    {% for i in proj.paginator.page_range %}
+                        {% if proj.number == i %}
+                            <li class="page-item active"  ><a class="page-link"> {{i}} <span class="sr-only">(current)</span></a></li>
+                        {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if proj.has_next %}
+                        <li class="page-item"><a  class="page-link" href="?page={{proj.next_page_number}}">&laquo;</a></li>
+                   
+				   
+                   
+                    {% endif %}
+
+                </ul>
+
+              {% endif %}
+			 </nav> 
+		</section>
+    <!-- our_project part end-->
+
+
+
+
+
+    <!--::cta_part start::-->
+    <div class="cta_part">
+        <div class="container">
+            <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="cta_iner">
+                <h1>Let’s create something awesome together</h1>
+                <a href="#" class="btn_1">Discuss project</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--::cta_part end::-->
+
+
+{% endblock %}

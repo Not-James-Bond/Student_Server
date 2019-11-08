@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{%  extends 'index.html' %}
+{% load staticfiles %}
+<html lang="en">
+
+
+  {% block body %}
+
+  
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg align-items-center ">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-sm-6">
+                    <div class="breadcrumb_tittle">                        
+                        <h2>BCA</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb end-->
+   
+
+    <!-- Table part Start-->
+<!--not used
+      
+       <section>
+       	<table class="table table-bordered ">
+  
+  <tbody>
+	<tr>                          
+	<td> <a href="/sub/{{ Studyone.sname }}/{{ j }}">Semester {{ j}}  </a><td>
+         </tr> 
+	
+	{% for j in Semester %}
+	<tr>                          
+	<td> <a href="/sub/{{ Studyone.sname }}/{{ j }}">Semester {{ j}}  </a><td>
+         </tr>    
+	{% endfor %}
+  	
+  
+  </tbody>
+</table>
+       </section>
+
+
+-->
+<!--SEMESTER -->
+
+<div class="container mt-10 border border-success" style="margin-bottom: 50px">
+
+       <div class="row">
+  <div class="col-lg-2 col-md-12" style="margin-bottom: 50px; margin-top: 50px">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+	{% for j in Semester %}
+      <a   class="nav-link btn btn-outline-success"  type="button" id="v-pills-messages-tab"  href="/sub/{{ Studyone.sname }}/{{ j }}">Semester {{ j}}  </a>
+      	{% endfor %}
+
+	</div>
+  </div>
+
+  </div>
+
+</div> 
+
+
+
+    {% endblock %}
+  

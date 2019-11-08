@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<script src="{% static 'script2.js' %}"></script>
+<link rel="stylesheet" href="{% static 'admin/style2.css' %}">
+{%  block body %}
+<body>
+
+<div class="navb" id="myDIV">
+{% for f in File %}
+  <a >{{ f.pf_name}}  </a><br>
+{% endfor %}
+</div>
+</body>
+{%  endblock %}
+</html>
