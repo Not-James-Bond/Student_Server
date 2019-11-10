@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8767da1-ced2-4c66-8e77-4687433c60f0" name="Default Changelist" comment="" />
+    <list default="true" id="c8767da1-ced2-4c66-8e77-4687433c60f0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/FB_IMG_1487037670764.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/Resume_Rajender_Rana.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/Resume_Rajender_Rana_AoKMg8n.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/face-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/my_pdf.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/my_pdf_MEURiCE.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/mypdfCopy.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/mypdfCopy_SFwjmWV.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/project_images/student-report-card-cpp.png" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/media/project_images/student-report-card-cpp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/project_images/studinfosyslogo1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/media/project_images/studinfosyslogo1.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/media/project_images/tic_tac_toe.gif" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/media/project_images/tic_tac_toe.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/ask_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/ask_us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/contact_process.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/files.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/files.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/project.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/project.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QF6ZKeCaQ16PInUT6qSEsuGQM3" />
   <component name="PropertiesComponent">
@@ -37,10 +60,25 @@
       <updated>1567354056499</updated>
       <workItem from="1567354074049" duration="23000" />
       <workItem from="1573127528817" duration="2245000" />
+      <workItem from="1573368436456" duration="316000" />
+      <workItem from="1573373225015" duration="170000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

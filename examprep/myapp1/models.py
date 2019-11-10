@@ -58,8 +58,8 @@ class File(models.Model):
     fid = models.AutoField
     subfile = models.ForeignKey(Subject, on_delete=models.CASCADE)
     fname = models.CharField(max_length=25)
-    files = models.FileField()
-    img1 = models.ImageField(upload_to='images')
+    files = models.FileField(upload_to='ebook',blank=True)
+    img1 = models.ImageField(upload_to='ebook/img',blank=True)
 
     def __str__(self):
         return self.fname
