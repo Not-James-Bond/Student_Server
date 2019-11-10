@@ -2305,7 +2305,7 @@ ul {
 @media (max-width: 991px) {
   /* line 2, /Applications/MAMP/htdocs/palash/cl/july 2019/192 Agency/192 Agency html/sass/_banner.scss */
   .banner_part {
-    height: 650px;
+    height: 450px;
   }
 }
 
@@ -2340,8 +2340,8 @@ ul {
   /* line 29, /Applications/MAMP/htdocs/palash/cl/july 2019/192 Agency/192 Agency html/sass/_banner.scss */
   .banner_part .banner_text {
     text-align: center;
-    padding-top: 0px;
-    height: 650px;
+    padding-top: 50px 0;
+    height: 350px;
   }
 }
 
