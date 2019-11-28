@@ -69,9 +69,8 @@ def filess(request,cn,semids,subs):
     sems = Semester.objects.filter(semcat__sname__contains=cn)
     semone = Semester.objects.get(semname=semids)
     sub = Subject.objects.filter(subsemester__semcat__sname__contains=cn,subsemester__semname__contains=semids)
-    file = File.objects.filter(subfile__subname__contains=subs)
-    subone = Subject.objects.get(subname=subs)
-    return render(request,"files.html",{"Study":study,"Semester":sems,"Subject":sub,"File":file,"Subjectone":subone,
+    file = File.objects.filter(subfile__subname__contains=subs, subfile__subsemester__semname__contains=semids)
+    return render(request,"files.html",{"Study":study,"Semester":sems,"Subject":sub,"File":file,
                                         "Studyone": stud,"Semesteroneobject": semone,"Language": lang,
                                         "Project_Language": project_l,})
 
@@ -281,7 +280,11 @@ def logout(request,uname):
     
 
 def about(request):
-    return render(request,'about.html')
+    language = Computer_Language.objects.all()
+    project_l = Project_Language.objects.all()
+    study = Study.objects.all()
+
+    return render(request,'about.html',{"Study": study,"Language": language,"Project_Language": project_l,})
 
 
 def ask_us(request):
