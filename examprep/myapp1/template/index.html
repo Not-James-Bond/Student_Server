@@ -128,7 +128,9 @@
                 </div>
                 {% if user.is_authenticated %}
                 <div class=log-in>
-                    <a class="log" href="/profileview/{{user}}">My Profile</a>
+                    <a class="log" href="/profileview/{{user}}">
+                      <img width="25" height="25" src="{% static 'img/svg/login.svg' %}" alt="" >
+                    </a>
                 </div>
                 {% else %}
                 <div class=log-in>

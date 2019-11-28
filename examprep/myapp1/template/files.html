@@ -70,9 +70,9 @@
       <th> {{f.fname}}</th>
 
         {% if user.is_authenticated %}
-        <th><a href="/filename/{{ f.files }}">Download</a></th>
+        <th><a href="/media/{{ f.files }}">Download</a></th>
         {% else %}
-        <th>(Download)  Please Login for download</th>
+        <th>(Download)  Please Login To Download</th>
         {% endif %}
 
     </tr>

@@ -201,13 +201,13 @@ def signup(request):
             ages = request.POST.get('age')
             if pward == cpward:
                 otp = str(int(99999 * random()))
-                subject = 'Thank you for registering to our site'
-                message = ' your code is: ' + otp
-                '''
+                subject = 'Thank you for registering to LinkTheInfo'
+                message = ' Welcome to LinkTheInfo - A community of lifelong learners and champions of their own success. Your Code is: ' + otp
+
                 email_from = settings.EMAIL_HOST_USER
-                recipient_list = ['devilritik30@gmail.com', ]
+                recipient_list = [email,]
                 send_mail(subject, message, email_from, recipient_list)
-                '''
+
                 otp = encrypt(otp)
                 return HttpResponseRedirect('/otp/' + email + '/' + fname + '/' + lname + '/' + pward + '/' + mobno +
                                             '/' + ages + '/' + uname + '/' + otp)
@@ -298,7 +298,7 @@ def ask_us(request):
         ask.person = request.POST.get('person_name')
         ask.email = request.POST.get('person_email')
         ask.save()
-        success(request,"Your question is recorded :) We will mail you")
+        success(request,"Your question is recorded :) We will mail you ASAP. Thank You For Contacting Us")
     return render(request,"ask_us.html",{"Study": study,"Language": language,"Project_Language": project_l,})
 
 
