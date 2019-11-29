@@ -1,7 +1,3 @@
-
-
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -312,6 +308,7 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 30px !important;
 }
 
 .wrap-login100-form-btn {
