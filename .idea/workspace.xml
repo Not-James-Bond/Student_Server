@@ -4,9 +4,12 @@
     <list default="true" id="c8767da1-ced2-4c66-8e77-4687433c60f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examprep/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/files.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/files.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examprep/myapp1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/OTP.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/OTP.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/program.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/program.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examprep/myapp1/template/single-project.html" beforeDir="false" afterPath="$PROJECT_DIR$/examprep/myapp1/template/single-project.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +59,9 @@
       <workItem from="1574943417345" duration="1321000" />
       <workItem from="1574964620560" duration="1082000" />
       <workItem from="1574965998560" duration="2024000" />
-      <workItem from="1574968321062" duration="1891000" />
+      <workItem from="1574968321062" duration="1894000" />
+      <workItem from="1574998927734" duration="1069000" />
+      <workItem from="1575000082282" duration="3111000" />
     </task>
     <servers />
   </component>
